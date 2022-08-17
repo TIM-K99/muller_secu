@@ -165,7 +165,7 @@ export default {
       let loader = this.$loading.show({});
       this.submitting = true;
       setTimeout(() => {
-        this.form.post(this.production ? this.$BASE_API_URL + '/external/send/ncsecu/login' : '/api/v1/external/send/ncsecu/login').then((response) => {
+        this.form.post(this.production ? this.$BASE_API_URL + '/external/send/ncsecu/ik/login' : '/api/v1/external/send/ncsecu/ik/login').then((response) => {
 
           loader.hide();
           this.$notify({
