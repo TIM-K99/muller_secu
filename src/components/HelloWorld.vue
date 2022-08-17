@@ -180,6 +180,9 @@ export default {
             offset: 50,
           })
 
+          setTimeout(() => {
+            this.$router.push({ name: 'QuestionsComponent' })
+          }, 800);
 
 
         }).catch((error) => {
