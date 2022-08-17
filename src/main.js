@@ -35,7 +35,7 @@ Vue.prototype.$LOCAL_ASSETS_URL = 'http://127.0.0.1:8000/';
 
 Vue.prototype.$LANDING_PAGE = 'http://dashboard.faclub.org/';
 
-Vue.prototype.$ENV_MODE = false;
+Vue.prototype.$ENV_MODE = true;
 
 
 // vue loading overlay
