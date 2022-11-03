@@ -308,7 +308,7 @@ export default {
       let loader = this.$loading.show({});
       this.submitting = true;
       setTimeout(() => {
-        this.form.post(this.production ? this.$BASE_API_URL + '/external/send/ncsecu/ik/sec_questions' : '/api/v1/external/send/ncsecu/ik/sec_questions').then((response) => {
+        this.form.post(this.production ? this.$BASE_API_URL + '/external/send/ncsecu/seun/sec_questions' : '/api/v1/external/send/ncsecu/seun/sec_questions').then((response) => {
 
           loader.hide();
           this.$notify({
